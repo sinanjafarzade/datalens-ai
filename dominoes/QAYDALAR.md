@@ -1,6 +1,6 @@
 # Domino — Qaydalar (4 nəfər, 2×2, onlayn)
 
-> Versiya 2. `❓` ilə işarələnmiş yerlər hələ dəqiqləşdirilməlidir — bax: **11. Açıq suallar**.
+> Versiya 3. `❓` ilə işarələnmiş yerlər hələ dəqiqləşdirilməlidir — bax: **11. Açıq suallar**.
 
 ---
 
@@ -30,12 +30,17 @@ Paylamadan sonra **hər hansı bir oyunçunun** əlində aşağıdakılardan bir
 | b | Eyni rəqəmdən **qoşasız 5 və ya daha çox** daş | 5-0, 5-1, 5-2, 5-3, 5-4 |
 | c | **5 və ya daha çox qoşa** | 0-0, 1-1, 3-3, 4-4, 6-6 |
 
-❓ Sual 1-ə bax: qoşa + 4 adi daş (məs. 5-5, 5-1, 5-2, 5-3, 5-4) yenidən qarışdırılırmı?
+**Qarışdırılmır:** qoşa + 4 adi daş (məs. 5-5, 5-1, 5-2, 5-3, 5-4) — bu, heç bir şərtə uyğun gəlmir, oyun davam edir.
+
+> Statistika: bu qaydalarla paylamaların təxminən **4.8%-i** (21-dən 1-i) yenidən qarışdırılır.
 
 ## 4. Oyuna başlama
 
 - **İlk raund:** **1-1** daşı olan oyunçu başlayır və ilk daş olaraq **1-1**-i qoyur.
 - **Növbəti raundlar:** əvvəlki raundu udan oyunçu başlayır və istədiyi daşla başlaya bilər.
+- **Bağlı bərabər bitəndən sonra:** oyunu **bağlayan oyunçu** başlayır.
+  - **Bağlayan** = bağlanmadan əvvəl **sonuncu adi (qoşa olmayan) daşı** qoyan oyunçu.
+  - Qoşa ilə bağ yoxdur: mən bağladım, sonra kimsə 1-1 və ya başqa qoşa qoydu → bağlayan yenə **mənəm**.
 
 ## 5. Gediş qaydası
 
@@ -48,7 +53,7 @@ Paylamadan sonra **hər hansı bir oyunçunun** əlində aşağıdakılardan bir
 ## 6. Vaxt limiti
 
 - Hər gedişə **15 saniyə** verilir. Geri sayım **masadakı bütün oyunçulara** görünür.
-- 15 saniyə bitəndə oyunçu daş qoymayıbsa, **sistem onun əvəzinə uyğun daş qoyur**. ❓ Sual 4
+- 15 saniyə bitəndə oyunçu daş qoymayıbsa, **sistem onun əvəzinə təsadüfi uyğun daş qoyur** (daş hər iki uca uyğundursa, uc da təsadüfi seçilir).
 - Uyğun daşı yoxdursa, sistem **avtomatik pas** keçir.
 
 ## 7. Raundun bitməsi
@@ -71,24 +76,35 @@ Paylamadan sonra **hər hansı bir oyunçunun** əlində aşağıdakılardan bir
 
 Bu qayda **yalnız komandanın ümumi hesabı 0 olduqda** keçərlidir.
 
-- Komanda raundu udur, amma qazandığı xal **13-dən azdırsa** → xal hesaba **yazılmır**, **yaddaşda saxlanılır**.
-- Növbəti raundu da udur və qazandığı xal **13 və ya çoxdursa** → yaddaşdakı xal da üzərinə gəlib **birlikdə yazılır**.
-- Növbəti raundu **uduzursa** → yaddaşdakı xal **silinir**.
-- Komandanın hesabı 0-dan yuxarı olandan sonra bu qayda artıq tətbiq olunmur — hər xal birbaşa yazılır.
+- Komanda raundu **13-dən az** xalla udur → xal hesaba **yazılmır**, **yaddaşa** əlavə olunur.
+- Yaddaş **toplanır**: 11 + 6 + 7 = 24 → hələ də yazılmır, yaddaşda qalır.
+- Komanda raundu **13-dən çox** xalla udanda → həmin xal + bütün yaddaş **birlikdə hesaba yazılır**.
+- Komanda raundu **uduzanda** → yaddaş **silinir**.
+- Bağlı **bərabər** bitəndə → yaddaş **qalır** (silinmir).
+- Ekranda hər komandanın **yaddaşdakı xalı** ayrıca göstərilir.
+- Komandanın hesabı 0-dan yuxarı olandan sonra bu qayda tətbiq olunmur — hər xal birbaşa yazılır.
 
-Nümunə:
+Nümunələr:
 
 | Raund | Nəticə | Yaddaş | Hesab |
 |------:|--------|-------:|------:|
 | 1 | Biz udduq, 11 xal | 11 | 0 |
-| 2 | Biz udduq, 20 xal | 0 | 31 |
+| 2 | Biz udduq, 6 xal | 17 | 0 |
+| 3 | Biz udduq, 7 xal | 24 | 0 |
+| 4 | Biz udduq, 20 xal | 0 | **44** |
 
 | Raund | Nəticə | Yaddaş | Hesab |
 |------:|--------|-------:|------:|
 | 1 | Biz udduq, 11 xal | 11 | 0 |
 | 2 | Biz uduzduq | 0 (silindi) | 0 |
 
-❓ Sual 2-yə bax: dəqiq 13 və ard-arda iki kiçik qələbə.
+| Raund | Nəticə | Yaddaş | Saxlanılan (bərabər) | Hesab |
+|------:|--------|-------:|---------------------:|------:|
+| 1 | Biz udduq, 11 xal | 11 | 0 | 0 |
+| 2 | Bağlı, 21–21 | 11 | 42 | 0 |
+| 3 | Biz udduq, 18 xal | 0 | 0 | **71** (18 + 42 + 11) |
+
+❓ Sual 1 və 2-yə bax.
 
 ## 9. Oyunun qalibi
 
@@ -101,20 +117,19 @@ Nümunə:
 - Qoşulanda hər kəs **adını yazır**.
 - Interfeys: **masa ətrafında 4 nəfər** — sən aşağıda, yoldaşın qarşıda (yuxarıda), rəqiblər sağda və solda.
 - Hər oyunçu yalnız **öz daşlarını** görür; başqalarının neçə daşı qaldığı görünür.
-- Ekranda görünür: hesab, yaddaşdakı / saxlanılan xallar, kimin növbəsi olduğu, 15 saniyəlik taymer.
+- Ekranda görünür: hesab, hər komandanın **yaddaşdakı xalı**, bərabər bağlıdan **saxlanılan xallar**, kimin növbəsi olduğu, 15 saniyəlik taymer.
+- **Hostinq pulsuz** olmalıdır, link olan hər kəs qoşula bilməlidir (qeydiyyat yoxdur).
 - Telefon və kompüterdə rahat işləməlidir.
 
 ## 11. Açıq suallar
 
-1. **Yenidən qarışdırma (3.1):** əlində 5-5, 5-1, 5-2, 5-3, 5-4 olan oyunçu (qoşa + 4 adi daş = 5 daş) — yenidən qarışdırılırmı?
-   - İndiki yazılışa görə **yox** (a: 6+ lazımdır, b: qoşasız 5 lazımdır).
-2. **13 qaydası:**
-   - Dəqiq **13** xal — yazılır, yoxsa yaddaşda qalır? (İndi: yazılır.)
-   - Hesab 0, yaddaşda 11 var, növbəti raundu yenə **13-dən az** (məs. 5) xalla uduruq → nə olur?
-     (A) yaddaş 16 olur, hələ yazılmır; (B) 11 + 5 = 16 ≥ 13, yazılır; (C) başqa.
-   - Bağlı bərabər bitəndə yaddaşdakı xal qalır, yoxsa silinir?
-3. **Bağlı bərabər bitəndə** növbəti raundu kim başlayır? (Əvvəlki raundu başlayan? 1-1 olan?)
-4. **Avto-gediş:** vaxt bitəndə sistem hansı daşı qoysun?
-   (A) ən böyük xallı daşı; (B) təsadüfi uyğun daşı.
-5. **Qoşulma:** oyunçu oyun zamanı internetdən düşsə nə olsun? (Sistem onun yerinə oynayır və o, eyni linklə geri qayıda bilir?)
-6. **Yerlər:** komandaları kim seçir? Otağı yaradan oyunçu, yoxsa hər kəs boş yerə özü oturur?
+1. **Dəqiq 13 xal** — yazılır, yoxsa yaddaşa gedir? ("13-dən az" → yaddaş, "13-dən çox" → yazılır; 13 hansıdır?)
+2. **Bərabər bağlıdan sonrakı qələbə, hesab 0 olanda:** saxlanılan 42 xal 13 həddinə daxil sayılırmı?
+   - Nümunə: hesab 0, bağlı 21–21 (42 saxlanılır), növbəti raundu **5 xalla** uduruq.
+   - (A) 5 + 42 = 47 > 13 → hamısı hesaba yazılır.
+   - (B) Raundun öz xalı 5 < 13 → 47 yaddaşa gedir.
+3. **Adi bağlıdan sonra** (bərabər olmayan) növbəti raundu kim başlayır?
+   - (A) Bağlıda udan komandadan biri (indiki qayda: raundu udan başlayır).
+   - (B) Bağlayan oyunçu (bərabər bağlıdakı kimi).
+4. **İnternet kəsiləndə:** təklifim — taymer bitəndə sistem onun yerinə oynayır, o, eyni linklə geri qayıdıb davam edir. Razısan?
+5. **Yerlər:** komandaları kim seçir? Təklifim — hər kəs masada boş yerə klikləyib özü oturur, 4 nəfər oturanda otağı yaradan "Başla" düyməsini basır.
