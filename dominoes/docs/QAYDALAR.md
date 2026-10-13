@@ -1,6 +1,6 @@
 # Domino — Qaydalar (4 nəfər, 2×2, onlayn)
 
-> Versiya 3. `❓` ilə işarələnmiş yerlər hələ dəqiqləşdirilməlidir — bax: **11. Açıq suallar**.
+> Versiya 4 — bütün qaydalar təsdiqlənib. Kodda hər qayda avtomatik testlə yoxlanılır (`tests/`).
 
 ---
 
@@ -37,8 +37,9 @@ Paylamadan sonra **hər hansı bir oyunçunun** əlində aşağıdakılardan bir
 ## 4. Oyuna başlama
 
 - **İlk raund:** **1-1** daşı olan oyunçu başlayır və ilk daş olaraq **1-1**-i qoyur.
-- **Növbəti raundlar:** əvvəlki raundu udan oyunçu başlayır və istədiyi daşla başlaya bilər.
-- **Bağlı bərabər bitəndən sonra:** oyunu **bağlayan oyunçu** başlayır.
+- **Növbəti raundlar** — istədiyi daşla başlaya bilər:
+  - Əvvəlki raund **domino** ilə bitibsə → daşlarını bitirən oyunçu başlayır.
+  - Əvvəlki raund **bağlı** bitibsə (kim udmasından asılı olmayaraq) → oyunu **bağlayan oyunçu** başlayır.
   - **Bağlayan** = bağlanmadan əvvəl **sonuncu adi (qoşa olmayan) daşı** qoyan oyunçu.
   - Qoşa ilə bağ yoxdur: mən bağladım, sonra kimsə 1-1 və ya başqa qoşa qoydu → bağlayan yenə **mənəm**.
 
@@ -76,9 +77,10 @@ Paylamadan sonra **hər hansı bir oyunçunun** əlində aşağıdakılardan bir
 
 Bu qayda **yalnız komandanın ümumi hesabı 0 olduqda** keçərlidir.
 
-- Komanda raundu **13-dən az** xalla udur → xal hesaba **yazılmır**, **yaddaşa** əlavə olunur.
+- Komanda raundu **13-dən az** (12 və aşağı) xalla udur → xal hesaba **yazılmır**, **yaddaşa** əlavə olunur.
 - Yaddaş **toplanır**: 11 + 6 + 7 = 24 → hələ də yazılmır, yaddaşda qalır.
-- Komanda raundu **13-dən çox** xalla udanda → həmin xal + bütün yaddaş **birlikdə hesaba yazılır**.
+- Komanda raundu **13 və ya çox** xalla udanda → həmin xal + bütün yaddaş **birlikdə hesaba yazılır**.
+- Bərabər bağlıdan **saxlanılan xallar** raundun xalına daxildir: hesab 0, saxlanılan 42, raund 5 xalla udulur → 5 + 42 = **47 yazılır**.
 - Komanda raundu **uduzanda** → yaddaş **silinir**.
 - Bağlı **bərabər** bitəndə → yaddaş **qalır** (silinmir).
 - Ekranda hər komandanın **yaddaşdakı xalı** ayrıca göstərilir.
@@ -104,8 +106,6 @@ Nümunələr:
 | 2 | Bağlı, 21–21 | 11 | 42 | 0 |
 | 3 | Biz udduq, 18 xal | 0 | 0 | **71** (18 + 42 + 11) |
 
-❓ Sual 1 və 2-yə bax.
-
 ## 9. Oyunun qalibi
 
 - **101 xala** ilk çatan (və ya keçən) komanda oyunu udur.
@@ -120,16 +120,5 @@ Nümunələr:
 - Ekranda görünür: hesab, hər komandanın **yaddaşdakı xalı**, bərabər bağlıdan **saxlanılan xallar**, kimin növbəsi olduğu, 15 saniyəlik taymer.
 - **Hostinq pulsuz** olmalıdır, link olan hər kəs qoşula bilməlidir (qeydiyyat yoxdur).
 - Telefon və kompüterdə rahat işləməlidir.
-
-## 11. Açıq suallar
-
-1. **Dəqiq 13 xal** — yazılır, yoxsa yaddaşa gedir? ("13-dən az" → yaddaş, "13-dən çox" → yazılır; 13 hansıdır?)
-2. **Bərabər bağlıdan sonrakı qələbə, hesab 0 olanda:** saxlanılan 42 xal 13 həddinə daxil sayılırmı?
-   - Nümunə: hesab 0, bağlı 21–21 (42 saxlanılır), növbəti raundu **5 xalla** uduruq.
-   - (A) 5 + 42 = 47 > 13 → hamısı hesaba yazılır.
-   - (B) Raundun öz xalı 5 < 13 → 47 yaddaşa gedir.
-3. **Adi bağlıdan sonra** (bərabər olmayan) növbəti raundu kim başlayır?
-   - (A) Bağlıda udan komandadan biri (indiki qayda: raundu udan başlayır).
-   - (B) Bağlayan oyunçu (bərabər bağlıdakı kimi).
-4. **İnternet kəsiləndə:** təklifim — taymer bitəndə sistem onun yerinə oynayır, o, eyni linklə geri qayıdıb davam edir. Razısan?
-5. **Yerlər:** komandaları kim seçir? Təklifim — hər kəs masada boş yerə klikləyib özü oturur, 4 nəfər oturanda otağı yaradan "Başla" düyməsini basır.
+- **Yerlər:** hər kəs masada boş yerə özü oturur; 4 nəfər oturanda otağı yaradan **"Başla"** basır.
+- **İnternet kəsiləndə:** oyun dayanmır — taymer bitəndə sistem onun yerinə oynayır; oyunçu eyni linklə geri qayıdıb davam edir.
